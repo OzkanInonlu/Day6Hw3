@@ -1,0 +1,147 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+
+---
+--- drop tables
+---
+
+
+DROP TABLE IF EXISTS JobPosition; 
+DROP TABLE IF EXISTS JobSeekers; 
+DROP TABLE IF EXISTS Employers; 
+DROP TABLE IF EXISTS SystemStaff; 
+DROP TABLE IF EXISTS User_; 
+
+
+--
+-- Name: JobPosition; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE JobPosition (
+    id smallint NOT NULL,
+    title character varying(20) NOT NULL
+);
+
+
+--
+-- Name: JobSeekers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE JobSeekers(
+    user_id smallint NOT NULL,
+    first_name character varying(20) NOT NULL,
+    last_name character varying(20) NOT NULL,
+    tcNo character varying(11) NOT NULL,
+    date_of_birth character varying(8) NOT NULL
+);
+
+
+--
+-- Name: Employers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE Employers (
+    user_id smallint NOT NULL,
+    company_name character varying(20) NOT NULL,
+    website character varying(50) NOT NULL,
+    phone character varying(20) NOT NULL
+);
+
+
+--
+-- Name: SystemStaff; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE SystemStaff (
+    user_id smallint NOT NULL,
+    first_name character varying(20) NOT NULL,
+    last_name character varying(20) NOT NULL
+);
+
+
+--
+-- Name: User_; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE User_(
+    id smallint NOT NULL,
+    email character varying(50) NOT NULL,
+    password character varying(20) NOT NULL
+);
+
+--
+-- Name: Verification; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE Verification(
+    id smallint NOT NULL,
+    user_id smallint NOT NULL,
+    email_verification boolean NOT NULL,
+    admin_verification boolean NOT NULL,
+    mernis_verification boolean NOT NULL
+);
+
+
+INSERT INTO jobPosition VALUES (1, 'Software Developer');
+INSERT INTO jobPosition VALUES (2, 'Software Tester');
+INSERT INTO jobPosition VALUES (3, 'Software Architect');
+INSERT INTO jobPosition VALUES (4, 'Software Developer');
+INSERT INTO jobPosition VALUES (5, 'UI Designer');
+INSERT INTO jobPosition VALUES (6, 'Anaylsis');
+INSERT INTO jobPosition VALUES (7, 'Database Manager');
+
+
+
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
+
+
+INSERT INTO Employers VALUES (1, 'Nike', 'www.nike.com', '12314551');
+INSERT INTO Employers VALUES (1, 'Nike', 'www.nike.com', '12314551');
+INSERT INTO Employers VALUES (1, 'Nike', 'www.nike.com', '12314551');
+INSERT INTO Employers VALUES (1, 'Nike', 'www.nike.com', '12314551');
+INSERT INTO Employers VALUES (1, 'Nike', 'www.nike.com', '12314551');
+INSERT INTO Employers VALUES (1, 'Nike', 'www.nike.com', '12314551');
+INSERT INTO Employers VALUES (1, 'Nike', 'www.nike.com', '12314551');
+
+INSERT INTO SystemStaff VALUES (1, 'Özkan', 'Inonlu') ;
+INSERT INTO SystemStaff VALUES (1, 'Özkan', 'Inonlu') ;
+INSERT INTO SystemStaff VALUES (1, 'Özkan', 'Inonlu') ;
+INSERT INTO SystemStaff VALUES (1, 'Özkan', 'Inonlu') ;
+INSERT INTO SystemStaff VALUES (1, 'Özkan', 'Inonlu') ;
+INSERT INTO SystemStaff VALUES (1, 'Özkan', 'Inonlu') ;
+INSERT INTO SystemStaff VALUES (1, 'Özkan', 'Inonlu') ;
+
+INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
+INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
+INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
+INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
+INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
+INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
+INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
+
+
+
+--
+-- PostgreSQL database dump complete
+--
