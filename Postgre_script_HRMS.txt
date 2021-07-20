@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS User_;
 --
 
 CREATE TABLE JobPosition (
-    id smallint NOT NULL,
+    id integer NOT NULL,
     title character varying(20) NOT NULL
 );
 
@@ -42,12 +42,13 @@ CREATE TABLE JobPosition (
 -- Name: JobSeekers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
+
 CREATE TABLE JobSeekers(
-    user_id smallint NOT NULL,
+    user_id integer NOT NULL,
     first_name character varying(20) NOT NULL,
     last_name character varying(20) NOT NULL,
     tcNo character varying(11) NOT NULL,
-    date_of_birth character varying(8) NOT NULL
+    date_of_birth_year integer NOT NULL
 );
 
 
@@ -56,7 +57,7 @@ CREATE TABLE JobSeekers(
 --
 
 CREATE TABLE Employers (
-    user_id smallint NOT NULL,
+    user_id integer NOT NULL,
     company_name character varying(20) NOT NULL,
     website character varying(50) NOT NULL,
     phone character varying(20) NOT NULL
@@ -68,7 +69,7 @@ CREATE TABLE Employers (
 --
 
 CREATE TABLE SystemStaff (
-    user_id smallint NOT NULL,
+    user_id integer NOT NULL,
     first_name character varying(20) NOT NULL,
     last_name character varying(20) NOT NULL
 );
@@ -79,7 +80,7 @@ CREATE TABLE SystemStaff (
 --
 
 CREATE TABLE User_(
-    id smallint NOT NULL,
+    id integer NOT NULL,
     email character varying(50) NOT NULL,
     password character varying(20) NOT NULL
 );
@@ -89,7 +90,7 @@ CREATE TABLE User_(
 --
 
 CREATE TABLE Verification(
-    id smallint NOT NULL,
+    id integer NOT NULL,
     user_id smallint NOT NULL,
     email_verification boolean NOT NULL,
     admin_verification boolean NOT NULL,
@@ -107,13 +108,13 @@ INSERT INTO jobPosition VALUES (7, 'Database Manager');
 
 
 
-INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
-INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
-INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
-INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
-INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
-INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
-INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551','13/06/01');
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551',2001);
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551',2001);
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551',2001);
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551',2001);
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551',2001);
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551',2001);
+INSERT INTO JobSeekers VALUES (1, 'Özkan', 'Inonlu', '12314551',2001);
 
 
 INSERT INTO Employers VALUES (1, 'Nike', 'www.nike.com', '12314551');
@@ -139,6 +140,15 @@ INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
 INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
 INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
 INSERT INTO User_ VALUES (1, 'ozkaanmax@gmail.com','123344');
+
+
+INSERT INTO verification VALUES (1, 1,'true','true','true');
+INSERT INTO verification VALUES (2, 2,'true','true','true');
+INSERT INTO verification VALUES (3, 3,'true','true','true');
+INSERT INTO verification VALUES (4, 4,'true','true','true');
+INSERT INTO verification VALUES (5, 5,'true','true','true');
+INSERT INTO verification VALUES (6, 6,'true','true','true');
+INSERT INTO verification VALUES (7, 7,'true','true','true');
 
 
 
